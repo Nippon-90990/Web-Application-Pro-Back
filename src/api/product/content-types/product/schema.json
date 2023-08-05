@@ -20,48 +20,42 @@
       "type": "string"
     },
     "price": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "description": {
       "type": "richtext"
     },
+    "size": {
+      "type": "json"
+    },
     "image": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "thumbnail": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
-    "original_Price": {
-      "type": "biginteger"
+    "org_price": {
+      "type": "integer"
     },
     "slug": {
       "type": "uid",
       "targetField": "name"
     },
-    "size": {
-      "type": "json"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "mappedBy": "products"
+      "inversedBy": "products"
     }
   }
 }

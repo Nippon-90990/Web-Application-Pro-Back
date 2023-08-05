@@ -15,15 +15,15 @@
     "name": {
       "type": "string"
     },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
     "products": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
-      "inversedBy": "categories"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
+      "mappedBy": "categories"
     }
   }
 }
